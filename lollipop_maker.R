@@ -67,9 +67,14 @@ load.package("ensembldb")
 load.package("EnsDb.Hsapiens.v86")
 
 ## Get script directory for sourcing helper scripts
-script_dir <- dirname(sys.frame(1)$ofile)
-if (length(script_dir) == 0 || script_dir == "") {
-  script_dir <- "."
+# Use commandArgs for more reliable script path detection
+args <- commandArgs(trailingOnly = FALSE)
+script_path <- sub("^--file=", "", args[grep("^--file=", args)])
+if (length(script_path) > 0) {
+  script_dir <- dirname(script_path)
+} else {
+  # Fallback to current directory if script path cannot be determined
+  script_dir <- getwd()
 }
 
 source(file.path(script_dir, "scripts/make_gene_model.R"))
