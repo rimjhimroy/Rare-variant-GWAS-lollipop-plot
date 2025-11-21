@@ -2,9 +2,9 @@
 ## Then this function modifies the position of the variants according to the new gene model and returns the modified gene model and variants file.
 ## Input is the gene_info created in the main lollipop_maker.R script and a data.table of variants with qvalue "qval", assiciation betas "BETA", and position of the variants in the genome "GENPOS".
 
-make_gene_model <- function(gene_info, variants) {
+make_gene_model <- function(gene_info, variants, exon_models_file = "data/exon_models.txt.gz") {
     # Load the gene's exon model:
-    exon_models <- fread("data/exon_models.txt.gz")
+    exon_models <- fread(exon_models_file)
     setnames(exon_models, names(exon_models), c("transcript", "cdsStart", "cdsEnd", "numExons", "exonStarts", "exonEnds", "transcriptType"))
     exon_models[, transcript := str_split(transcript, "\\.", simplify = T)[1], by = 1:nrow(exon_models)]
     ensembl_annotation_gene <- exon_models[transcript == gene_info[, ENST]]

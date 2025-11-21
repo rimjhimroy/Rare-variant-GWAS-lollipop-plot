@@ -1,4 +1,4 @@
-plot_lollipop <- function(gene_model, pfam_dom, qvalue) {
+plot_lollipop <- function(gene_model, pfam_dom, qvalue, symbol) {
     # Default Theme:
     theme <- theme(
         panel.background = element_rect(fill = "white"),
