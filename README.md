@@ -196,7 +196,19 @@ While designed for Regenie output, the tool can be adapted for other GWAS tools 
 
 If you use this tool in your research, please cite:
 
-[Your citation information here]
+R.R. Choudhury (2025). Rare variant GWAS lollipop plots. https://github.com/rimjhimroy/Rare-variant-GWAS-lollipop-plot
+
+Suggested BibTeX for this wrapper:
+
+```bibtex
+@misc{rchoudhury_lollipop_plot_2025,
+	author = {Choudhury, R. R.},
+	title = {Rare variant GWAS lollipop plots},
+	year = {2025},
+	howpublished = {Repository / workflow in project},
+	note = {URL: https://github.com/rimjhimroy/Rare-variant-GWAS-lollipop-plot}
+}
+```
 
 ## License
 
