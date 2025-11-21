@@ -1,0 +1,26 @@
+# R and RStudio files
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+
+# Output files (plots and tables)
+plot/*.png
+plot/*.tiff
+plot/*.tsv
+!plot/Gene_lolli.png
+!plot/gene_lolli.tsv
+
+# Temporary files
+*.tmp
+.DS_Store
+*~
+
+# Conda/Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
